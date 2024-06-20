@@ -73,4 +73,11 @@ public class MainActivity extends AppCompatActivity {
     public void playStop(View view){
         if(mediaPlayer != null) mediaPlayer.stop();
     }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        releasePlayer();
+        releaseRecorder();
+    }
 }
